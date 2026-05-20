@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bibliografie – Scientific Reading</title>
+  <style>
+    :root {
+      --bg: #f6f3ee;
+      --card: #ffffff;
+      --text: #1f2933;
+      --muted: #667085;
+      --accent: #7c3aed;
+      --accent-dark: #5b21b6;
+      --border: #e6e0d8;
+      --tag: #ede9fe;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 72px 20px 48px;
+      text-align: center;
+      background: linear-gradient(135deg, #ede9fe, #fff7ed);
+      border-bottom: 1px solid var(--border);
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    header p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    main {
+      width: min(1120px, calc(100% - 40px));
+      margin: 36px auto 64px;
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      margin-bottom: 24px;
+      align-items: center;
+    }
+
+    input[type="search"] {
+      width: 100%;
+      padding: 15px 16px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      font-size: 1rem;
+      background: white;
+      outline: none;
+    }
+
+    input[type="search"]:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
+    }
+
+    .counter {
+      color: var(--muted);
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .bibliography {
+      display: grid;
+      gap: 16px;
+    }
+
+    article {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(31, 41, 51, 0.06);
+    }
+
+    article h2 {
+      font-size: 1.08rem;
+      margin: 0 0 8px;
+      line-height: 1.4;
+    }
+
+    .meta {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--tag);
+      color: var(--accent-dark);
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    a.button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: var(--accent);
+      color: white;
+      padding: 9px 13px;
+      border-radius: 12px;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    a.button.secondary {
+      background: #f3f4f6;
+      color: var(--text);
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 32px 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .empty {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+      background: white;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+    }
+
+    @media (max-width: 680px) {
+      .toolbar {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        padding-top: 52px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bibliografie</h1>
+    <p>Eine digitale Sammlung wissenschaftlicher Literatur zu Migration, Bildung, Mehrsprachigkeit und schulischem Erfolg.</p>
+  </header>
+
+  <main>
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Nach Autor, Jahr, Titel oder Thema suchen …" aria-label="Bibliografie durchsuchen" />
+      <div class="counter"><span id="count">17</span> Einträge</div>
+    </div>
+
+    <section class="bibliography" id="bibliography">
+      <article data-text="Albornoz Cabrales Calvo Hauk 2018 Immigrant children’s school performance and immigration costs Evidence from Spain Economics Letters">
+        <span class="tag">Migration & Schule</span>
+        <h2>Albornoz, F., Cabrales, A., Calvo, P., &amp; Hauk, E. (2018). Immigrant children’s school performance and immigration costs: Evidence from Spain.</h2>
+        <p class="meta">Economics Letters, 170, 27–30.</p>
+        <div class="actions"><a class="button" href="https://doi.org/10.1016/j.econlet.2018.05.015" target="_blank" rel="noopener">DOI öffnen</a></div>
+      </article>
+
+      <article data-text="Albornoz Cabrales Hauk 2018 Immigration and the school system Economic Theory">
+        <span class="tag">Bildungssystem</span>
+        <h2>Albornoz, F., Cabrales, A., &amp; Hauk, E. (2018). Immigration and the school system.</h2>
+        <p class="meta">Economic Theory, 65(4), 855–890.</p>
+        <div class="actions"><a class="button" href="https://doi.org/10.1007/s00199-017-1041-4" target="_blank" rel="noopener">DOI öffnen</a></div>
+      </article>
+
+      <article data-text="Bertozzi 2018 University Students With Migrant Background in Italy Which Factors Affect Opportunities">
+        <span class="tag">Hochschule</span>
+        <h2>Bertozzi, R. (2018). University Students With Migrant Background in Italy. Which Factors Affect Opportunities?</h2>
+        <p class="meta">Wissenschaftlicher Beitrag.</p>
+      </article>
+
+      <article data-text="Blaschitz Weichselbaum Tsonev Grond 2021 Strategien pädagogische Fachkräfte Mehrsprachigkeit Elementarbereich Informationen Deutsch als Fremdsprache">
+        <span class="tag">Mehrsprachigkeit</span>
+        <h2>Blaschitz, V., Weichselbaum, M., Tsonev, S. Ç., &amp; Grond, A. (2021). Strategien der pädagogischen Fachkräfte im Umgang mit Mehrsprachigkeit im Elementarbereich.</h2>
+        <p class="meta">Informationen Deutsch als Fremdsprache, 48(6), 614–631.</p>
+        <div class="actions"><a class="button" href="https://doi.org/10.1515/infodaf-2021-0074" target="_blank" rel="noopener">DOI öffnen</a></div>
+      </article>
+
+      <article data-text="Canan 2015 Identitätsstatus Einheimische Migrationshintergrund Neue styles Springer Fachmedien Wiesbaden">
+        <span class="tag">Identität</span>
+        <h2>Canan, C. (2015). Identitätsstatus von Einheimischen mit Migrationshintergrund: Neue styles?</h2>
+        <p class="meta">Springer Fachmedien Wiesbaden.</p>
+        <div class="actions"><a class="button" href="https://doi.org/10.1007/978-3-658-08982-5" target="_blank" rel="noopener">DOI öffnen</a></div>
+      </article>
+
+      <article data-text="Freundl Meschi Pavese 2023 Wie Kinder mit Migrationshintergrund vom Leistungsniveau ihrer Schulklasse beeinflusst werden">
+        <span class="tag">Schulleistung</span>
+        <h2>Freundl, V., Meschi, E., &amp; Pavese, C. (2023). Wie Kinder mit Migrationshintergrund vom Leistungsniveau ihrer Schulklasse beeinflusst werden.</h2>
+        <p class="meta">Wissenschaftlicher Beitrag.</p>
+      </article>
+
+      <article data-text="Glick Hohmann-Marriott 2007 Academic Performance Young Children Immigrant Families Race Ethnicity National Origins International Migration Review">
+        <span class="tag">Schulleistung</span>
+        <h2>Glick, J. E., &amp; Hohmann-Marriott, B. (2007). Academic Performance of Young Children in Immigrant Families: The Significance of Race, Ethnicity, and National Origins.</h2>
+        <p class="meta">International Migration Review, 41(2), 371–402.</p>
+        <div class="actions"><a class="button" href="https://doi.org/10.1111/j.1747-7379.2007.00072.x" target="_blank" rel="noopener">DOI öffnen</a></div>
+      </article>
+
+      <article data-text="King Koller Zölch Carnicer 2011 Bildungserfolg adoleszente Ablösung Söhne türkische Migrantenfamilien Zeitschrift für Erziehungswissenschaft">
+        <span class="tag">Bildungserfolg</span>
+        <h2>King, V., Koller, H.-C., Zölch, J., &amp; Carnicer, J. (2011). Bildungserfolg und adoleszente Ablösung bei Söhnen aus türkischen Migrantenfamilien.</h2>
+        <p class="meta">Zeitschrift für Erziehungswissenschaft, 14(4), 581–601.</p>
+        <div class="actions"><a class="button" href="https://doi.org/10.1007/s11618-011-0242-z" target="_blank" rel="noopener">DOI öffnen</a></div>
+      </article>
+
+      <article data-text="Ruhose Schwerdt 2016 Does early educational tracking increase migrant-native achievement gaps Economics of Education Review">
+        <span class="tag">Tracking</span>
+        <h2>Ruhose, J., &amp; Schwerdt, G. (2016). Does early educational tracking increase migrant-native achievement gaps? Differences-in-differences evidence across countries.</h2>
+        <p class="meta">Economics of Education Review, 52, 134–154.</p>
+        <div class="actions"><a class="button" href="https://doi.org/10.1016/j.econedurev.2016.02.004" target="_blank" rel="noopener">DOI öffnen</a></div>
+      </article>
+
+      <article data-text="Rydell Nyström Dahlstedt 2023 Directing Paths Into Adulthood Newly Arrived Students Education Migration Policy Social Inclusion">
+        <span class="tag">Migration Policy</span>
+        <h2>Rydell, M., Nyström, S., &amp; Dahlstedt, M. (2023). Directing Paths Into Adulthood: Newly Arrived Students and the Intersection of Education and Migration Policy.</h2>
+        <p class="meta">Social Inclusion, 11(4).</p>
+        <div class="actions"><a class="button" href="https://doi.org/10.17645/si.v11i4.6825" target="_blank" rel="noopener">DOI öffnen</a><a class="button secondary" href="https://www.cogitatiopress.com/socialinclusion/article/view/6825" target="_blank" rel="noopener">Artikel öffnen</a></div>
+      </article>
+
+      <article data-text="Schachner Schwarzenthal Van De Vijver Noack 2019 belong achieve cultural diversity climate immigrant nonimmigrant Germany Journal of Educational Psychology">
+        <span class="tag">Diversität</span>
+        <h2>Schachner, M. K., Schwarzenthal, M., Van De Vijver, F. J. R., &amp; Noack, P. (2019). How all students can belong and achieve: Effects of the cultural diversity climate amongst students of immigrant and nonimmigrant background in Germany.</h2>
+        <p class="meta">Journal of Educational Psychology, 111(4), 703–716.</p>
+        <div class="actions"><a class="button" href="https://doi.org/10.1037/edu0000303" target="_blank" rel="noopener">DOI öffnen</a></div>
+      </article>
+
+      <article data-text="Söhn 2008 Bildungsunterschiede Migrantengruppen Deutschland Schulabschlüsse Aussiedler erste Generation Berliner Journal für Soziologie">
+        <span class="tag">Bildungsungleichheit</span>
+        <h2>Söhn, J. (2008). Bildungsunterschiede zwischen Migrantengruppen in Deutschland: Schulabschlüsse von Aussiedlern und anderen Migranten der ersten Generation im Vergleich.</h2>
+        <p class="meta">Berliner Journal für Soziologie, 18(3), 401–431.</p>
+        <div class="actions"><a class="button" href="https://doi.org/10.1007/s11609-008-0028-1" target="_blank" rel="noopener">DOI öffnen</a></div>
+      </article>
+
+      <article data-text="Stang König McElvany 2024 Implizite Einstellungen Kindern Grundschulalter Menschen Migrationshintergrund Zeitschrift Pädagogische Psychologie">
+        <span class="tag">Einstellungen</span>
+        <h2>Stang, J., König, S., &amp; McElvany, N. (2024). Implizite Einstellungen von Kindern im Grundschulalter gegenüber Menschen mit Migrationshintergrund.</h2>
+        <p class="meta">Zeitschrift für Pädagogische Psychologie, 38(1–2), 55–68.</p>
+        <div class="actions"><a class="button" href="https://doi.org/10.1024/1010-0652/a000320" target="_blank" rel="noopener">DOI öffnen</a></div>
+      </article>
+
+      <article data-text="Teltemann Windzio 2011 kognitive Exklusion junge Migranten Ländervergleich institutionelle sozialstrukturelle Faktoren Berliner Journal für Soziologie">
+        <span class="tag">Ländervergleich</span>
+        <h2>Teltemann, J., &amp; Windzio, M. (2011). Die „kognitive Exklusion“ junger Migranten im Ländervergleich: Effekte institutioneller und sozialstruktureller Faktoren.</h2>
+        <p class="meta">Berliner Journal für Soziologie, 21(3), 335–361.</p>
+        <div class="actions"><a class="button" href="https://doi.org/10.1007/s11609-011-0164-x" target="_blank" rel="noopener">DOI öffnen</a></div>
+      </article>
+
+      <article data-text="Tobisch Dresel 2017 Negatively positively biased teachers judgments expectations ethnic social backgrounds Social Psychology of Education">
+        <span class="tag">Lehrkräfte</span>
+        <h2>Tobisch, A., &amp; Dresel, M. (2017). Negatively or positively biased? Dependencies of teachers’ judgments and expectations based on students’ ethnic and social backgrounds.</h2>
+        <p class="meta">Social Psychology of Education, 20(4), 731–752.</p>
+        <div class="actions"><a class="button" href="https://doi.org/10.1007/s11218-017-9392-z" target="_blank" rel="noopener">DOI öffnen</a></div>
+      </article>
+
+      <article data-text="Usanova Schnoor Gogolin 2023 Mehrsprachigkeit digitale Praxis Schreibfähigkeit Unterrichtswissenschaft">
+        <span class="tag">Mehrsprachigkeit</span>
+        <h2>Usanova, I., Schnoor, B., &amp; Gogolin, I. (2023). Mehrsprachigkeit, digitale Praxis und Schreibfähigkeit.</h2>
+        <p class="meta">Unterrichtswissenschaft, 51(2), 199–220.</p>
+        <div class="actions"><a class="button" href="https://doi.org/10.1007/s42010-023-00165-2" target="_blank" rel="noopener">DOI öffnen</a></div>
+      </article>
+    </section>
+
+    <div class="empty" id="empty">Keine passenden Einträge gefunden.</div>
+  </main>
+
+  <footer>
+    <p>Bibliografie – Scientific Reading · Digitale Übersicht</p>
+  </footer>
+
+  <script>
+    const search = document.querySelector('#search');
+    const entries = Array.from(document.querySelectorAll('article'));
+    const count = document.querySelector('#count');
+    const empty = document.querySelector('#empty');
+
+    function filterEntries() {
+      const query = search.value.trim().toLowerCase();
+      let visible = 0;
+
+      entries.forEach(entry => {
+        const text = entry.dataset.text.toLowerCase();
+        const isVisible = text.includes(query);
+        entry.style.display = isVisible ? '' : 'none';
+        if (isVisible) visible += 1;
+      });
+
+      count.textContent = visible;
+      empty.style.display = visible === 0 ? 'block' : 'none';
+    }
+
+    search.addEventListener('input', filterEntries);
+  </script>
+</body>
+</html>
